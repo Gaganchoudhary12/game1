@@ -1,0 +1,77 @@
+###     snake water gun     ###
+import random
+import time
+d={"s":1,"w":2,"g":3,"a":4,"q":4,"e":4,"r":4,"t":4,"y":4,"u":4,"i":4,"o":4,"p":4,"d":4,"f":4,"j":4,"h":4,"k":4,"l":4,"z":4,'x':4,"c":4,"v":4,"b":4,"n":4,"m":4}
+print("*lets start the game ")
+print(d["a"])
+q=0
+w=0
+print("\n*Game rules\n"
+      " press s for snake\n"
+      " press w for water\n"
+      " press g for gun")
+print("you have 10 chances")
+a=input("\n*You are ready press enter")
+
+
+for i in range(1,10):
+    #lis = ["1", "2 ", "3"]
+    #m = random.choice(lis)
+    m=random.randint(1,3)
+    j = input("enter your choice")
+    n= d[j]
+
+    if n==1and m==2:
+        print(" you win this chance ")
+        q = q + 1
+        print(" you win =",q,end="")
+        print("       computer win =", w)
+
+    elif n==1 and m==3:
+        print(" you lose computer win this chance")
+        w = w + 1
+        print(" you win =", q, end="")
+        print("       computer win =",w)
+    elif n==1 and m==1:
+        print(" draw")
+    elif n == 2 and m == 1:
+        print(" you win this chance ")
+        q = q + 1
+        print(" you win =", q,end="")
+        print("       computer win =", w)
+
+    elif n == 2 and m == 3:
+        print(" you lose computer win this chance")
+        w = w + 1
+        print(" you win =", q, end="")
+        print("        computer win =", w)
+    elif n == 2 and m == 2:
+        print(" draw")
+    elif n == 3 and m == 1:
+        print(" you win this chance ")
+        q = q + 1
+        print(" you win =", q,end="")
+        print("        computer win =", w)
+    elif n>=4:
+        print("wrong input")
+        i=0
+        continue
+    elif n == 3 and m == 2:
+        print(" you lose computer win this chance")
+        w = w + 1
+        print(" you win =", q, end="")
+        print("        computer win =", w)
+    elif n == 3 and m == 3:
+        print(" draw")
+    print("\nchances left",10-i)
+    time.sleep(2)
+print("\n             game over")
+print("\n                   result is")
+print(" \n you wins=",q , end="")
+print("           computer wins =",w)
+if q>w:
+    print("winner winner")
+elif w>q:
+    print("tumse na ho payga")
+elif w==q:
+    print(" draw")
